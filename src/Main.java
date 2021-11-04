@@ -2,12 +2,13 @@ public class Main {
     public static void main(String[] args) {
         int currentBalance = 100;
         int incomingTransfer = 1100;
-        int bonusRuble = incomingTransfer / 100;
-        short minimumPayment = 1000;
-        int totalBalance = currentBalance + incomingTransfer + bonusRuble;
-        if (incomingTransfer < minimumPayment) {
-            totalBalance = currentBalance + incomingTransfer;
+        int bonusRuble;
+        if (incomingTransfer > 1000) {
+            bonusRuble = incomingTransfer / 100;
+        } else {
+            bonusRuble = 0;
         }
+        int totalBalance = currentBalance + incomingTransfer + bonusRuble;
         System.out.println(totalBalance);
     }
 }
